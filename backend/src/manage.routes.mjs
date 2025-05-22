@@ -1,6 +1,7 @@
 import { Router } from "express";
 import AuthToken from "./auth.token.mjs";
 import Login from "./modules/login/routes/login.routes.mjs";
+import AdminRouter from "./modules/admins/routes/admin.routers.mjs"
 
 const router = Router();
 
@@ -10,7 +11,7 @@ router.use("/test", (req,res)=>{
 });
 router.use("/login",Login);
 router.use(AuthToken)
-router.use("/admin",() => {});
+router.use("/admin",AdminRouter);
 router.use("/role",() => {});
 router.use("/permission",() => {});
 
